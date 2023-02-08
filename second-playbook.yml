@@ -1,0 +1,13 @@
+---
+- name: Check Nginx plugin
+  hosts: all
+  become: true
+  tasks:
+    - name: Gather Package facts
+      package_facts: manager=auto
+    - name : Validate whether Nginx is installed or not.
+      debug: msg="Nginx is installed"
+      when: "'nginx' in ansible_facts.packages"
+    - name : Validate whether Nginx is installed or not.
+      debug: msg="Nginx is not installed"
+      when: "'nginx' not in ansible_facts.packages"
