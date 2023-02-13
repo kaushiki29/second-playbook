@@ -1,3 +1,4 @@
+---
 collections:
-  - name: amazon.aws
-    source: https://automationhub.com/ui/repo/rh-certified/amazon/aws/
+  - ansible.posix
+    #source: https://automationhub.com/ui/repo/rh-certified/amazon/aws/
