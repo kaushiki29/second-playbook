@@ -8,10 +8,10 @@
       ansible.posix.firewalld_info:
         active_zones: true
 
-- name: Gather information about specific zones
-  ansible.posix.firewalld_info:
-    zones:
-      - public
-      - external
-      - internal
+    - name: Gather information about specific zones
+      ansible.posix.firewalld_info:
+        zones:
+          - public
+          - external
+          - internal
 
