@@ -4,14 +4,14 @@
   become: true
   gather_facts: false
   tasks:
-    - name: get some info
-      amazon.aws.ec2_vpc_net_info:
-        region: "ap-south-1"
-      register: all_the_info
-      connection: local
-      delegate_to: localhost
-      run_once: true
-      
-    - name: how many vpc?
-      debug:
-        msg: "There are {{ all_the_info.vpcs|length }} VPCs"
+    - name: Gather information about active zones
+      ansible.posix.firewalld_info:
+        active_zones: true
+
+- name: Gather information about specific zones
+  ansible.posix.firewalld_info:
+    zones:
+      - public
+      - external
+      - internal
+
