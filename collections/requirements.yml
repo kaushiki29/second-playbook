@@ -1,4 +1,4 @@
 ---
 collections:
-  - ansible.posix
+  - amazon.aws
     #source: https://automationhub.com/ui/repo/rh-certified/amazon/aws/
